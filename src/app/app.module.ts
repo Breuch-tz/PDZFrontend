@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { AboutComponent } from './components/about/about.component';
 import { ProductsComponent } from './components/products/products.component';
+import { ContactComponent } from './components/contact/contact.component';
 
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { NgImageSliderModule } from 'ng-image-slider';
+import { MatDividerModule } from '@angular/material/divider';
 
 @NgModule({
   declarations: [
@@ -18,6 +20,7 @@ import { NgImageSliderModule } from 'ng-image-slider';
     HomeComponent,
     AboutComponent,
     ProductsComponent,
+    ContactComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,6 +28,7 @@ import { NgImageSliderModule } from 'ng-image-slider';
     MatIconModule,
     BrowserAnimationsModule,
     NgImageSliderModule,
+    MatDividerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

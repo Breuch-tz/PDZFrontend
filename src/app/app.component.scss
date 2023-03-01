@@ -8,4 +8,52 @@
   margin-left: 2.5rem;
 }
 
+.example-menu {
+  position: fixed;
+  text-align: -webkit-center;
+  box-shadow: -4px 0px 0px 0px rgb(255, 255, 255),
+    8px 0px 0px 0px rgb(255, 255, 255);
+  border-left: 4px solid rgb(255, 255, 255);
 
+  background-color: rgb(255, 255, 255);
+  // padding: 6px 0;
+}
+
+.example-menu-item {
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
+
+  user-select: none;
+  // min-width: 64px;
+  line-height: 36px;
+  // padding: 0 16px;
+
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  flex: 1;
+}
+
+// .example-menu-item:hover {
+//   a {
+//     transition: 0.3s;
+//     color: var(--accent);
+//   }
+// }
+
+div ul li:hover {
+  a {
+    color: var(--accent);
+  }
+}
+
+div ul li div button:hover {
+  div {
+    color: var(--accent);
+  }
+}
+
+.example-standalone-item[aria-expanded="true"] {
+  background-color: rgb(208, 208, 208);
+}

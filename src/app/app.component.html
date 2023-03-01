@@ -1,6 +1,4 @@
-<nav
-  class="bg-white px-2 py-2.5 fixed w-full z-20 top-0 left-0 border-b"
->
+<nav class="bg-white px-2 py-2.5 fixed w-full z-20 top-0 left-0 border-b">
   <div class="container flex flex-wrap items-center justify-between mx-auto">
     <a routerLink="/home">
       <img
@@ -22,14 +20,15 @@
         class="inline-flex items-center p-2 rounded-lg md:hidden focus:outline-none focus:ring-2 focus:ring-gray-200"
         aria-controls="navbar-sticky"
         aria-expanded="false"
-        (click)="sidenavtoggle()"
+        (click)="sidenavToggle()"
       >
         <mat-icon>menu</mat-icon>
       </button>
     </div>
     <div
+      style="transition: 0.3s"
       [hidden]="SidenavToggleStatus"
-      class="items-center justify-between w-full md:flex md:w-auto md:order-1"
+      class="items-center mr-2 justify-between w-full md:flex md:w-auto md:order-1"
       id="navbar-sticky"
     >
       <ul
@@ -43,33 +42,60 @@
             >Home</a
           >
         </li>
+        <mat-divider *ngIf="!Mobilesize"></mat-divider>
         <li>
-          <a
-            routerLink="/about"
-            class="block py-2 pl-3 pr-4 rounded md:p-0"
+          <a routerLink="/about" class="block py-2 pl-3 pr-4 rounded md:p-0"
             >About</a
           >
         </li>
+        <mat-divider *ngIf="!Mobilesize"></mat-divider>
         <li>
           <a
-            routerLink="/products"
-            class="block py-2 pl-3 pr-4 rounded md:p-0"
-            >Products</a
-          >
-        </li>
+            style="cursor: pointer; user-select: none"
+            (click)="dropdownToggle()"
+            class="example-standalone-trigger block py-2 pl-3 pr-4 rounded md:p-0"
+            >Products
+          </a>
 
-        <li>
-          <a
-            routerLink="/contact"
-            class="block py-2 pl-3 pr-4 rounded md:p-0"
-            >Contact</a
+          <div
+            *ngIf="Mobilesize"
+            [hidden]="DropdownToggleStatus"
+            class="example-menu"
+            (click)="dropdownClose()"
           >
+            <button class="example-menu-item"><div>a</div></button>
+            <button class="example-menu-item"><div>Refresh</div></button>
+            <button class="example-menu-item"><div>Refresh</div></button>
+            <button class="example-menu-item"><div>Refresh</div></button>
+          </div>
+        </li>
+        <ul *ngIf="!Mobilesize" [hidden]="DropdownToggleStatus">
+          <li>
+            <a
+              routerLink="/about"
+              class="block pt-0 py-2 pl-3 pr-4 rounded md:p-0"
+              >About</a
+            >
+          </li>
+          <li>
+            <a
+              routerLink="/about"
+              class="block pt-0 py-2 pl-3 pr-4 rounded md:p-0"
+              >About</a
+            >
+          </li>
+        </ul>
+        <mat-divider *ngIf="!Mobilesize"></mat-divider>
+        <li>
+          <a routerLink="/contact" class="block py-2 pl-3 pr-4 rounded md:p-0"
+            >Contact
+          </a>
         </li>
       </ul>
     </div>
   </div>
 </nav>
-<body (click)="sidenavclose()">
+<body (click)="sidenavClose(); dropdownClose()" (mouseover)="dropdownClose()">
   <router-outlet (activate)="onActivate()"></router-outlet>
 </body>
 
@@ -78,17 +104,17 @@
 >
   <span class="text-sm sm:text-center"
     >©2023
-    <a href="https://flowbite.com/" class="hover:underline">Puls der Zeit</a>. All
-    Rights Reserved.
+    <a href="https://flowbite.com/" class="hover:underline">Puls der Zeit</a>.
+    All Rights Reserved.
   </span>
-  <ul
-    class="flex flex-wrap items-center mt-3 text-sm sm:mt-0"
-  >
+  <ul class="flex flex-wrap items-center mt-3 text-sm sm:mt-0">
     <li>
       <a href="#" class="text-sm mr-4 hover:underline md:mr-6">About</a>
     </li>
     <li>
-      <a href="#" class="text-sm mr-4 hover:underline md:mr-6">Privacy Policy</a>
+      <a href="#" class="text-sm mr-4 hover:underline md:mr-6"
+        >Privacy Policy</a
+      >
     </li>
     <li>
       <a href="#" class="text-sm mr-4 hover:underline md:mr-6">Licensing</a>
@@ -96,7 +122,5 @@
     <li>
       <a href="#" class="text-sm hover:underline">Contact</a>
     </li>
-   
-
   </ul>
 </footer>
