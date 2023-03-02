@@ -26,6 +26,7 @@
       </button>
     </div>
     <div
+    
       style="transition: 0.3s"
       [hidden]="SidenavToggleStatus"
       class="items-center mr-2 justify-between w-full md:flex md:w-auto md:order-1"
@@ -96,7 +97,7 @@
   </div>
 </nav>
 <body (click)="sidenavClose(); dropdownClose()" (mouseover)="dropdownClose()">
-  <router-outlet (activate)="onActivate()"></router-outlet>
+  <router-outlet (activate)="onActivate();dropdownClose()"></router-outlet>
 </body>
 
 <footer
