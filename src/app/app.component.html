@@ -1,4 +1,7 @@
-<nav class="bg-white px-2 py-2.5 fixed w-full z-20 top-0 left-0 border-b">
+<nav
+  style="position: absolute"
+  class="bg-white px-2 py-2.5 fixed w-full z-20 top-0 left-0 border-b"
+>
   <div class="container flex flex-wrap items-center justify-between mx-auto">
     <a routerLink="/home">
       <img
@@ -26,10 +29,9 @@
       </button>
     </div>
     <div
-    
       style="transition: 0.3s"
       [hidden]="SidenavToggleStatus"
-      class="items-center mr-2 justify-between w-full md:flex md:w-auto md:order-1"
+      class="items-center mr-1.5 justify-between w-full md:flex md:w-auto md:order-1"
       id="navbar-sticky"
     >
       <ul
@@ -50,6 +52,7 @@
           >
         </li>
         <mat-divider *ngIf="!Mobilesize"></mat-divider>
+
         <li>
           <a
             style="cursor: pointer; user-select: none"
@@ -70,6 +73,7 @@
             <button class="example-menu-item"><div>Refresh</div></button>
           </div>
         </li>
+
         <ul *ngIf="!Mobilesize" [hidden]="DropdownToggleStatus">
           <li>
             <a
@@ -97,7 +101,7 @@
   </div>
 </nav>
 <body (click)="sidenavClose(); dropdownClose()" (mouseover)="dropdownClose()">
-  <router-outlet (activate)="onActivate();dropdownClose()"></router-outlet>
+  <router-outlet (activate)="onActivate(); dropdownClose()"></router-outlet>
 </body>
 
 <footer

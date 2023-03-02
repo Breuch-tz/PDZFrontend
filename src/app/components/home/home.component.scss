@@ -11,8 +11,8 @@
 .title {
   height: 250px;
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2)
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3)
     ),
     url(./../../../assets/home/zwei-goldene-eheringe.jpg);
   background-size: cover;
@@ -39,62 +39,71 @@
   }
 }
 
+// .mehrErfahrenOne {
+//   transition: opacity 0.5s;
+//   opacity: 0;
+// }
+// .mehrErfahrenTwo {
+//   transition: opacity 0.5s;
+//   opacity: 0;
+// }
+// .mehrErfahrenThree {
+//   transition: opacity 0.5s;
+//   opacity: 0;
+// }
+// .mehrErfahrenFour {
+//   transition: opacity 0.5s;
+//   opacity: 0;
+// }
 
-.mehrErfahrenOne{
-  transition: opacity 0.5s;
-  opacity: 0;
-}
-.mehrErfahrenTwo{
-  transition: opacity 0.5s;
-  opacity: 0;
-}
-.mehrErfahrenThree{
-  transition: opacity 0.5s;
-  opacity: 0;
-}
-.mehrErfahrenFour{
-  transition: opacity 0.5s;
-  opacity: 0;
+// .mehrErfahrenBoxOne:hover {
+//   .mehrErfahrenBoxOneSvg {
+//     transform: scale(1.2);
+//     transition: 0.3s;
+//   }
+//   .mehrErfahrenOne {
+//     opacity: 1;
+//     transition: 0.5s;
+//   }
+// }
+// .mehrErfahrenBoxTwo:hover {
+//   .mehrErfahrenBoxTwoSvg {
+//     transform: scale(1.2);
+//     transition: 0.3s;
+//   }
+//   .mehrErfahrenTwo {
+//     opacity: 1;
+//     transition: 0.5s;
+//   }
+// }
+// .mehrErfahrenBoxThree:hover {
+//   .mehrErfahrenBoxThreeSvg {
+//     transform: scale(1.2);
+//     transition: 0.3s;
+//   }
+//   .mehrErfahrenThree {
+//     opacity: 1;
+//     transition: 0.5s;
+//   }
+// }
+
+// .mehrErfahrenBoxFour:hover {
+//   .mehrErfahrenBoxFourSvg {
+//     transform: scale(1.2);
+//     transition: 0.3s;
+//   }
+//   .mehrErfahrenFour {
+//     opacity: 1;
+//     transition: 0.5s;
+//   }
+// }
+
+.zoom:hover img {
+  transform: scale(1.1);
 }
 
-.mehrErfahrenBoxOne:hover{
-  .mehrErfahrenBoxOneSvg{
-    transform: scale(1.2);
-    transition: 0.3s;
-  }
-  .mehrErfahrenOne{
-    opacity: 1;
-    transition: 0.5s;
-  }
-}
-.mehrErfahrenBoxTwo:hover{
-  .mehrErfahrenBoxTwoSvg{
-    transform: scale(1.2);
-    transition: 0.3s;
-  }
-  .mehrErfahrenTwo{
-    opacity: 1;
-    transition: 0.5s;
-  }
-}
-.mehrErfahrenBoxThree:hover{
-  .mehrErfahrenBoxThreeSvg{
-    transform: scale(1.2);
-    transition: 0.3s;
-  }
-  .mehrErfahrenThree{
-    opacity: 1;
-    transition: 0.5s;
-  }
-}
-
-.mehrErfahrenBoxFour:hover{
-  .mehrErfahrenBoxFourSvg{
-    transform: scale(1.2);
-    transition: 0.3s;
-  }
-  .mehrErfahrenFour{
-    opacity: 1;
-    transition: 0.5s;
+.mehrErfahrenBox:hover {
+  .mehrErfahrenText {
+    color: var(--accent);
   }
 }

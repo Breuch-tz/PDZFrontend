@@ -32,7 +32,7 @@ export class AppComponent {
     this.SidenavToggleStatus = !this.SidenavToggleStatus;
   }
   public sidenavClose() {
-    this.SidenavToggleStatus = true;
+    if (!this.SidenavToggleStatus) this.SidenavToggleStatus = true;
   }
   public dropdownToggle() {
     this.DropdownToggleStatus = !this.DropdownToggleStatus;
@@ -44,5 +44,6 @@ export class AppComponent {
   public onActivate() {
     window.scroll({ top: 0, left: 0, behavior: 'smooth' });
     this.SidenavToggleStatus = true;
+    this.DropdownToggleStatus = true;
   }
 }
