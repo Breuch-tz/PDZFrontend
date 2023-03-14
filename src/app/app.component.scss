@@ -8,4 +8,18 @@
   margin-left: 2.5rem;
 }
 
+div ul li:hover {
+  a {
+    color: var(--one-opacity-X);
+  }
+}
 
+.routeIsActive {
+  color: var(--accent);
+}
+
+@media only screen and (max-width: 327px) {
+  .contact-button {
+    display: none;
+  }
+}
