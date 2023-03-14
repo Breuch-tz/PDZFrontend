@@ -1,11 +1,22 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
+import { EmailService } from 'src/app/services/email.service';
 
 @Component({
   selector: 'app-contact',
   templateUrl: './contact.component.html',
   styleUrls: ['./contact.component.scss'],
 })
-export class ContactComponent {}
+export class ContactComponent {
 
-// AIzaSyCqFspU_cWvkPZwagPRbDbnm5TPG9LrKe8 api key
-// placeId: 'ChIJ9brHzL-3uUcR658gAuyQ4Hc',
+  constructor(private emailService: EmailService) {}
+
+  public createEmail(emailForm: {
+    eName: String;
+    eEmail: String;
+    eMessage: String;
+  }) {
+    this.emailService.onEmailCreate(emailForm).subscribe();
+  }
+}
+
+

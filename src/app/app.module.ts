@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,7 @@ import { WerkstattComponent } from './components/products/werkstatt/werkstatt.co
 
 import { MatIconModule } from '@angular/material/icon';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 
 import { NgImageSliderModule } from 'ng-image-slider';
 import { MatDividerModule } from '@angular/material/divider';
@@ -37,6 +39,8 @@ import { MatDividerModule } from '@angular/material/divider';
     BrowserAnimationsModule,
     NgImageSliderModule,
     MatDividerModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
