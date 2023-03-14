@@ -7,7 +7,6 @@ import { Component, HostListener } from '@angular/core';
 })
 export class AppComponent {
   public SidenavToggleStatus: boolean = true;
-  public DropdownToggleStatus: boolean = true;
   public Mobilesize: boolean = true;
 
   public ScreenWidth!: Number;
@@ -21,7 +20,6 @@ export class AppComponent {
     this.ScreenWidth = window.innerWidth;
     if (this.ScreenWidth <= 767) {
       this.Mobilesize = false;
-      this.dropdownClose();
     }
     if (this.ScreenWidth > 767) {
       this.Mobilesize = true;
@@ -34,16 +32,9 @@ export class AppComponent {
   public sidenavClose() {
     if (!this.SidenavToggleStatus) this.SidenavToggleStatus = true;
   }
-  public dropdownToggle() {
-    this.DropdownToggleStatus = !this.DropdownToggleStatus;
-  }
-  public dropdownClose() {
-    this.DropdownToggleStatus = true;
-  }
 
   public onActivate() {
     window.scroll({ top: 0, left: 0, behavior: 'smooth' });
     this.SidenavToggleStatus = true;
-    this.DropdownToggleStatus = true;
   }
 }

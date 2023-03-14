@@ -11,34 +11,11 @@
 .title {
   height: 250px;
   background-image: linear-gradient(
-      rgba(255, 255, 255, 0.2),
-      rgba(255, 255, 255, 0.2)
+      rgba(255, 255, 255, 0.3),
+      rgba(255, 255, 255, 0.3)
     ),
-    url(./../../../assets/products/ZeichnungGoldschmiede.jpg);
+    url(./../../../assets/about/Laden02.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-position: 50% 50%;
-}
-
-.image-section {
-  img {
-    height: 200px;
-    width: auto;
-  }
-  .image-section-one {
-    height: 200px;
-    width: auto;
-  }
-  .image-section-two {
-    height: 200px;
-    width: auto;
-  }
-  .image-section-three {
-    height: 200px;
-    width: auto;
-  }
-}
-
-.zoom:hover img {
-  transform: scale(1.1);
+  background-position: 100% 31%;
 }
