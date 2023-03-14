@@ -15,9 +15,9 @@ export class EmailService {
     eEmail: String;
     eMessage: String;
   }): Observable<IEmailModel> {
-    console.log('log: ', emailForm);
     return this.http.post<any>('http://localhost:3000', emailForm).pipe(
       tap((response: any) => {
+        console.log('server response: ', response);
       })
     );
   }
