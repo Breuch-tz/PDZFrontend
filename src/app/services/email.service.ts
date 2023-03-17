@@ -17,8 +17,8 @@ export class EmailService {
     emailTo: String;
     company: String;
   }): Observable<IEmailModel> {
-    emailForm.emailTo = 'breuch.tizian@gmail.com';
-    emailForm.company = 'Company';
+    emailForm.emailTo = 'info@breuch.de';
+    emailForm.company = 'Puls der Zeit - Juwelier Breuch';
 
     return this.http.post<any>('http://localhost:3000', emailForm).pipe(
       tap((response: any) => {
