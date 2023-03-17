@@ -15,9 +15,10 @@ export class EmailService {
     eEmail: String;
     eMessage: String;
     emailTo: String;
+    company: String;
   }): Observable<IEmailModel> {
-    emailForm.emailTo = 'tizian.b1@web.de';
-    console.log(emailForm);
+    emailForm.emailTo = 'breuch.tizian@gmail.com';
+    emailForm.company = 'Company';
 
     return this.http.post<any>('http://localhost:3000', emailForm).pipe(
       tap((response: any) => {

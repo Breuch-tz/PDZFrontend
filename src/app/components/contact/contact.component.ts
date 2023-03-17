@@ -14,6 +14,7 @@ export class ContactComponent {
     eEmail: String;
     eMessage: String;
     emailTo: String;
+    company: String;
   }) {
     this.emailService.onEmailCreate(emailForm).subscribe();
   }
