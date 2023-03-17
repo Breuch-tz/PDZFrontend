@@ -9,13 +9,29 @@ import { EmailService } from 'src/app/services/email.service';
 export class ContactComponent {
   constructor(private emailService: EmailService) {}
 
-  public createEmail(emailForm: {
+  public async submit(emailForm: {
     eName: String;
     eEmail: String;
     eMessage: String;
+    eBox: String;
     emailTo: String;
     company: String;
   }) {
     this.emailService.onEmailCreate(emailForm).subscribe();
+  }
+
+  public async createEmail(
+    emailForm: {
+      eName: String;
+      eEmail: String;
+      eMessage: String;
+      eBox: String;
+      emailTo: String;
+      company: String;
+    },
+    resetForm: any
+  ) {
+    await this.submit(emailForm);
+    resetForm.resetForm();
   }
 }

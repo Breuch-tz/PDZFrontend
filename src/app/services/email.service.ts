@@ -14,6 +14,7 @@ export class EmailService {
     eName: String;
     eEmail: String;
     eMessage: String;
+    eBox: String;
     emailTo: String;
     company: String;
   }): Observable<IEmailModel> {
@@ -22,7 +23,7 @@ export class EmailService {
 
     return this.http.post<any>('http://localhost:3000', emailForm).pipe(
       tap((response: any) => {
-        console.log('server response: ', response);
+        // console.log('server response: ', response);
       })
     );
   }
@@ -32,5 +33,7 @@ export interface IEmailModel {
   eName: String;
   eEmail: String;
   eMessage: String;
+  eBox: String;
   emailTo: String;
+  company: String;
 }
