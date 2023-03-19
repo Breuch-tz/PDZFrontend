@@ -15,18 +15,20 @@ export class EmailService {
     eEmail: String;
     eMessage: String;
     eBox: String;
-    emailTo: String;
-    company: String;
+    eEmailTo: String;
+    eCompany: String;
   }): Observable<IEmailModel> {
-    emailForm.emailTo = 'info@breuch.de';
-    emailForm.company = 'Puls der Zeit - Juwelier Breuch';
+    emailForm.eEmailTo = 'breuch.tizian@gmail.com';
+    emailForm.eCompany = 'Puls der Zeit - Juwelier Breuch';
 
     return this.http.post<any>('http://localhost:3000', emailForm).pipe(
       tap((response: any) => {
-        // console.log('server response: ', response);
+        console.log('server response: ', response);
       })
     );
   }
+
+  public validateEmailForm() {}
 }
 
 export interface IEmailModel {
@@ -34,6 +36,7 @@ export interface IEmailModel {
   eEmail: String;
   eMessage: String;
   eBox: String;
-  emailTo: String;
-  company: String;
+  eEmailTo: String;
+  eCompany: String;
+  eCheckbox: Boolean;
 }

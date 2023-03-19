@@ -17,52 +17,60 @@
       <div
         class="grow-0 shrink-0 basis-auto mb-12 md:mb-0 w-full md:w-6/12 px-3 lg:px-6"
       >
-        <form #emailForm="ngForm" (ngSubmit)="createEmail(emailForm.value)">
+        <form
+          #emailForm="ngForm"
+          (ngSubmit)="createEmail(emailForm.value, emailForm)"
+        >
           <div class="form-group mb-6">
             <input
+              [ngClass]="emailValidatorService.validateStyleName"
               required
               name="eName"
               ngModel
               type="text"
-              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              id="exampleInput7"
+              class="block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               placeholder="Name"
             />
           </div>
           <div class="form-group mb-6">
             <input
+              [ngClass]="emailValidatorService.validateStyleEmail"
               required
               name="eEmail"
               ngModel
               type="email"
-              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              id="exampleInput8"
+              class="block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               placeholder="Email address"
             />
           </div>
           <div class="form-group mb-6">
             <textarea
+              [ngClass]="emailValidatorService.validateStyleMessage"
               required
               name="eMessage"
+              type="text"
               ngModel
-              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              id="exampleFormControlTextarea13"
+              class="block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               rows="3"
               placeholder="Message"
             ></textarea>
           </div>
 
-          <div class="flex items-center mb-4">
+          <div
+            [ngClass]="emailValidatorService.validateStyleCheckbox"
+            class="flex items-center mb-4"
+          >
             <input
+              required
+              name="eCheckbox"
+              ngModel
               style="cursor: pointer"
-              id="default-checkbox"
               type="checkbox"
-              value=""
               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             />
             <label
               for="default-checkbox"
-              class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              class="ml-2 text-sm font-medium dark:text-gray-300"
               >Die
               <a
                 style="cursor: pointer"
@@ -74,10 +82,20 @@
           </div>
 
           <button
-            class="w-full px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            class="mb-2 w-full px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
           >
             Senden
           </button>
+          <span
+            [ngClass]="emailValidatorService.validateFormError"
+            style="
+              font-size: 15px;
+              color: rgba(255, 0, 0, 0.5);
+              position: relative;
+            "
+          >
+            Name, Email oder Nachricht wurden falsch oder nicht ausgefüllt.
+          </span>
         </form>
       </div>
     </div>

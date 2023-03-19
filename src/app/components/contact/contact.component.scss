@@ -1,0 +1,24 @@
+.validateStyleInvalid {
+  border-color: red;
+}
+.validateStyleInvalidCB {
+  color: red;
+}
+
+.validateStyleFormError {
+  opacity: 0;
+}
+
+::ng-deep .custom-snackbar {
+  position: fixed !important;
+  text-justify: center !important;
+  max-width: 80vw !important;
+  margin: auto !important;
+  margin-bottom: 15px !important;
+  simple-snack-bar {
+    background-color: rgb(198, 151, 73, 0.5) !important;
+  }
+  div {
+    padding-right: 0px;
+  }
+}
