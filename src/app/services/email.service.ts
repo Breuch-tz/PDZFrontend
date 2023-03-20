@@ -10,6 +10,7 @@ import { catchError, retry } from 'rxjs/operators';
 })
 export class EmailService {
   constructor(private http: HttpClient) {}
+  
   public onEmailCreate(emailForm: {
     eName: String;
     eEmail: String;
@@ -27,8 +28,6 @@ export class EmailService {
       })
     );
   }
-
-  public validateEmailForm() {}
 }
 
 export interface IEmailModel {

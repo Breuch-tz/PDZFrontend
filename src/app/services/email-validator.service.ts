@@ -8,44 +8,65 @@ export class EmailValidatorService {
   public validateStyleEmail: String = '';
   public validateStyleMessage: String = '';
   public validateStyleCheckbox: String = '';
+  public validateStyleCheckboxBoolean: Boolean = false;
 
   public validateFormError: String = 'validateStyleFormError';
 
   constructor() {}
 
-  public validateName(eName: String) {
-    if (eName == null || eName.length < 3) {
-      this.validateStyleName = 'validateStyleInvalid';
+  public validateName(emailForm: {
+    eName: String;
+    eEmail: String;
+    eMessage: String;
+    eCheckbox: Boolean;
+  }) {
+    if (emailForm.eName == null || emailForm.eName.length < 3) {
       return false;
     }
-    this.validateStyleName = 'validateStyleValid';
     return true;
   }
 
-  public validateEmail(eEmail: String) {
-    if (eEmail == null || !eEmail.includes('@') || !eEmail.includes('.')) {
-      this.validateStyleEmail = 'validateStyleInvalid';
+  public validateEmail(emailForm: {
+    eName: String;
+    eEmail: String;
+    eMessage: String;
+    eCheckbox: Boolean;
+  }) {
+    if (
+      emailForm.eEmail == null ||
+      !emailForm.eEmail.includes('@') ||
+      !emailForm.eEmail.includes('.')
+    ) {
       return false;
     }
-    this.validateStyleEmail = 'validateStyleValid';
     return true;
   }
 
-  public validateMessage(eMessage: String) {
-    if (eMessage == null || eMessage.length <= 10) {
-      this.validateStyleMessage = 'validateStyleInvalid';
+  public validateMessage(emailForm: {
+    eName: String;
+    eEmail: String;
+    eMessage: String;
+    eCheckbox: Boolean;
+  }) {
+    if (emailForm.eMessage == null || emailForm.eMessage.length <= 10) {
       return false;
     }
-    this.validateStyleMessage = 'validateStyleValid';
     return true;
   }
 
-  public validateCheckbox(eCheckbox: Boolean) {
-    if (eCheckbox == null || eCheckbox == undefined || !eCheckbox) {
-      this.validateStyleCheckbox = 'validateStyleInvalidCB';
+  public validateCheckbox(emailForm: {
+    eName: String;
+    eEmail: String;
+    eMessage: String;
+    eCheckbox: Boolean;
+  }) {
+    if (
+      emailForm.eCheckbox == null ||
+      emailForm.eCheckbox == undefined ||
+      !emailForm.eCheckbox
+    ) {
       return false;
     }
-    this.validateStyleCheckbox = 'validateStyleValid';
     return true;
   }
 
@@ -55,20 +76,29 @@ export class EmailValidatorService {
     eMessage: String;
     eCheckbox: Boolean;
   }) {
-    this.validateName(emailForm.eName);
-    this.validateEmail(emailForm.eEmail);
-    this.validateMessage(emailForm.eMessage);
-    this.validateCheckbox(emailForm.eCheckbox);
+    this.validateName(emailForm);
+    this.validateEmail(emailForm);
+    this.validateMessage(emailForm);
+    this.validateCheckbox(emailForm);
     if (
-      (this.validateName(emailForm.eName) &&
-        this.validateEmail(emailForm.eEmail) &&
-        this.validateMessage(emailForm.eMessage) &&
-        this.validateCheckbox(emailForm.eCheckbox)) == true
+      (this.validateName(emailForm) &&
+        this.validateEmail(emailForm) &&
+        this.validateMessage(emailForm) &&
+        this.validateCheckbox(emailForm)) == true
     ) {
+      //keinerror
       this.validateFormError = 'validateStyleFormError';
+      
+     
       return true;
     }
+    //error
     this.validateFormError = '';
+    setTimeout(()=> {
+      this.validateFormError = 'validateStyleFormError';
+    }, 6000);
     return false;
   }
+
+ 
 }
