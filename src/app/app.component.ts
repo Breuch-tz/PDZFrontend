@@ -1,4 +1,5 @@
 import { Component, HostListener } from '@angular/core';
+import { Meta } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-root',
@@ -11,8 +12,24 @@ export class AppComponent {
 
   public ScreenWidth!: Number;
 
-  constructor() {
+  constructor(public meta: Meta) {
     this.onResize();
+  }
+  ngOnInit() {
+    this.meta.addTags([
+      {
+        name: 'description',
+        content:
+          'Herzlich willkommen bei Puls der Zeit j Juwelier Breuch. Trauringe, Uhren und Schmuck mit Top Beratung und Preisen.',
+      },
+      {
+        name: 'keywords',
+        content:
+          'Trauringe, Uhren, Schmuck, Revision, Ohrlochstechen, Uhrmachermeister, Goldschmiede',
+      },
+      { name: 'robots', content: 'index' },
+    ]),
+      6000;
   }
 
   @HostListener('window:resize', ['$event'])

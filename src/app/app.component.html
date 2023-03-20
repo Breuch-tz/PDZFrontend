@@ -84,13 +84,30 @@
 </body>
 
 <footer
-  class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6"
+  class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 flex flex-col"
 >
+
+  <div class="mb-6 contentblock-one container mx-auto flex flex-col text-center items-center">
+    <h2 class="text-1xl font-bold sm:text-1xl">Öffnungszeiten</h2>
+    <div>
+      <p>
+        Montag Geschlossen <br />
+        Dienstag Geschlossen <br />
+        <b> Mittwoch</b> 10:00-13:00, 15:00-18:00 <br />
+        <b> Donnerstag</b> 10:00-13:00, 15:00-18:00 <br />
+        <b> Freitag</b> 10:00-13:00, 15:00-18:00 <br />
+        Samstag Geschlossen <br />
+        Sonntag Geschlossen <br />
+      </p>
+    </div>
+  </div>
+
+<div class="mx-auto flex flex-col ">
   <span class="text-sm sm:text-left"
     >©2023 <a routerLink="/home" class="hover:underline">Puls der Zeit</a>. All
     Rights Reserved.
   </span>
-  <ul class="flex flex-wrap items-center mt-3 text-sm sm:mt-0">
+  <ul class="flex flex-col text-center items-center mt-3 text-sm sm:mt-0">
     <li>
       <a
         routerLink="/about"
@@ -124,4 +141,5 @@
       </a>
     </li>
   </ul>
+</div>
 </footer>
