@@ -20,7 +20,6 @@
         <form
           #emailForm="ngForm"
           (ngSubmit)="createEmail(emailForm.value, emailForm)"
-          
         >
           <div class="form-group mb-6">
             <input
@@ -54,9 +53,7 @@
             ></textarea>
           </div>
 
-          <div
-            class="flex items-center mb-4"
-          >
+          <div class="flex items-center mb-4">
             <input
               required
               name="eCheckbox"
@@ -64,7 +61,7 @@
               style="cursor: pointer"
               type="checkbox"
               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
-              />
+            />
             <label
               for="default-checkbox"
               class="ml-2 text-sm font-medium dark:text-gray-300"
@@ -91,7 +88,8 @@
               position: relative;
             "
           >
-            Name, Email, Nachricht oder Datenschutzerklärung wurde falsch oder nicht berücksichtigt.
+            Name, Email, Nachricht oder Datenschutzerklärung wurde falsch oder
+            nicht berücksichtigt.
           </span>
         </form>
       </div>
