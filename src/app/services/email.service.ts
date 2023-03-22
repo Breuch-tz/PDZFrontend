@@ -21,7 +21,7 @@ export class EmailService {
     emailForm.eEmailTo = 'info@breuch.de';
     emailForm.eCompany = 'Puls der Zeit - Juwelier Breuch';
 
-    return this.http.post<any>('http://localhost:3000', emailForm).pipe(
+    return this.http.post<any>('http://world-wide-website.de:3000/', emailForm).pipe(
       tap((response: any) => {
         console.log('server response: ', response);
       })
