@@ -21,10 +21,9 @@ export class EmailService {
     emailForm.eEmailTo = 'info@breuch.de';
     emailForm.eCompany = 'Puls der Zeit - Juwelier Breuch';
 
-    return this.http.post<any>('https://world-wide-website.de:3000/', emailForm).pipe(
-      tap((response: any) => {
-        console.log('server response: ', response);
-      })
+    return this.http.post<any>(
+      'https://world-wide-website.de:3000/',
+      emailForm
     );
   }
 }
