@@ -1,10 +1,10 @@
-<div class="container my-24 px-6 mx-auto">
-  <section class="mb-12 text-black-800">
+<div class="container my-24 mb-12 px-6 mx-auto">
+  <section class="text-black-800">
     <div class="flex flex-wrap">
       <div
         class="grow-0 shrink-0 basis-auto mb-6 md:mb-0 w-full md:w-6/12 px-3 lg:px-6"
       >
-        <h2 class="text-3xl font-bold mb-6">Kontaktieren Sie uns</h2>
+        <h1 class="text-3xl font-bold mb-6">Kontaktieren Sie uns</h1>
         <p class="text-black-800 mb-6">
           Wenn Sie Fragen zu unseren Leistungen und Angeboten haben oder einen
           Termin vereinbaren wollen, können Sie das folgende Formular nutzen!
@@ -17,15 +17,17 @@
       <div
         class="grow-0 shrink-0 basis-auto mb-12 md:mb-0 w-full md:w-6/12 px-3 lg:px-6"
       >
-        <form #emailForm="ngForm" (ngSubmit)="createEmail(emailForm.value)">
+        <form
+          #emailForm="ngForm"
+          (ngSubmit)="createEmail(emailForm.value, emailForm)"
+        >
           <div class="form-group mb-6">
             <input
               required
               name="eName"
               ngModel
               type="text"
-              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              id="exampleInput7"
+              class="block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               placeholder="Name"
             />
           </div>
@@ -35,8 +37,7 @@
               name="eEmail"
               ngModel
               type="email"
-              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              id="exampleInput8"
+              class="block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               placeholder="Email address"
             />
           </div>
@@ -44,9 +45,9 @@
             <textarea
               required
               name="eMessage"
+              type="text"
               ngModel
-              class="form-control block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-              id="exampleFormControlTextarea13"
+              class="block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
               rows="3"
               placeholder="Message"
             ></textarea>
@@ -54,15 +55,16 @@
 
           <div class="flex items-center mb-4">
             <input
+              required
+              name="eCheckbox"
+              ngModel
               style="cursor: pointer"
-              id="default-checkbox"
               type="checkbox"
-              value=""
               class="w-4 h-4 text-blue-600 bg-gray-100 border-gray-300 rounded focus:ring-blue-500 dark:focus:ring-blue-600 dark:ring-offset-gray-800 focus:ring-2 dark:bg-gray-700 dark:border-gray-600"
             />
             <label
               for="default-checkbox"
-              class="ml-2 text-sm font-medium text-gray-900 dark:text-gray-300"
+              class="ml-2 text-sm font-medium dark:text-gray-300"
               >Die
               <a
                 style="cursor: pointer"
@@ -74,17 +76,28 @@
           </div>
 
           <button
-            class="w-full px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
+            class="mb-2 w-full px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out"
           >
             Senden
           </button>
+          <span
+            [ngClass]="emailValidatorService.validateFormError"
+            style="
+              font-size: 15px;
+              color: rgba(255, 0, 0, 0.7);
+              position: relative;
+            "
+          >
+            Name, Email, Nachricht oder Datenschutzerklärung wurde falsch oder
+            nicht berücksichtigt.
+          </span>
         </form>
       </div>
     </div>
   </section>
 </div>
 
-<div class="container my-24 mb-12 px-6 mx-auto">
+<div class="container my-24 mt-0 mb-12 px-6 mx-auto">
   <section class="text-black-800">
     <div class="mt-8 grid grid-cols-1 gap-x-16 gap-y-12 lg:grid-cols-2">
       <blockquote
@@ -119,9 +132,7 @@
           <button
             class="standart-button px-7 py-3 leading-snug uppercase rounded shadow-md ease-in-out"
           >
-            <a
-              href="https://www.google.com/search?q=puls+der+zeit+martin+breuch&oq=puls+der+zeit+martin&aqs=chrome.1.69i57j35i39l2.4777j0j7&sourceid=chrome&ie=UTF-8#lrd=0x47b9b7bfccc7baf5:0x77e090ec02209feb,3,,,,"
-              target="_blank"
+            <a href="https://g.page/r/CeufIALskOB3EB0/review " target="_blank"
               >Bewerten Sie uns auf Google!</a
             >
           </button>

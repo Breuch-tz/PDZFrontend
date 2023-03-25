@@ -84,44 +84,65 @@
 </body>
 
 <footer
-  class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6"
+  class="p-4 bg-white rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 flex flex-col"
 >
-  <span class="text-sm sm:text-left"
-    >©2023 <a routerLink="/home" class="hover:underline">Puls der Zeit</a>. All
-    Rights Reserved.
-  </span>
-  <ul class="flex flex-wrap items-center mt-3 text-sm sm:mt-0">
-    <li>
-      <a
-        routerLink="/about"
-        routerLinkActive="routeIsActive"
-        class="text-sm mr-4 hover:underline md:mr-6"
-        >About</a
-      >
-    </li>
-    <li>
-      <a
-        routerLink="/contact"
-        routerLinkActive="routeIsActive"
-        class="text-sm mr-4 hover:underline md:mr-6"
-        >Contact</a
-      >
-    </li>
-    <li>
-      <a
-        routerLink="/impressum"
-        routerLinkActive="routeIsActive"
-        class="text-sm mr-4 hover:underline md:mr-6"
-        >Impressum</a
-      >
-    </li>
-    <li>
-      <a
-        routerLink="/datenschutzerklaerung"
-        routerLinkActive="routeIsActive"
-        class="text-sm mr-4 hover:underline"
-        >Datenschutzerklärung
-      </a>
-    </li>
-  </ul>
+  <div
+    class="mb-6 contentblock-one container mx-auto flex flex-col text-center items-center"
+  >
+    <h2 class="text-1xl font-bold sm:text-1xl">Öffnungszeiten</h2>
+    <div class="grid grid-rows-6 grid-flow-col gap-1">
+      <div>Montag & Dienstag</div>
+      <div><b>Mittwoch</b></div>
+      <div><b>Donnerstag</b></div>
+      <div><b>Freitag</b></div>
+      <div><b>Samstag</b></div>
+      <div>Sonnatg</div>
+      <div>Geschlossen</div>
+      <div>10:00-13:00 15:00-18:00</div>
+      <div>10:00-13:00 15:00-18:00</div>
+      <div>10:00-13:00 15:00-18:00</div>
+      <div>10:00-13:00</div>
+      <div>Geschlossen</div>
+    </div>
+  </div>
+
+  <div
+    class="mb-6 contentblock-one container mx-auto flex flex-col text-center items-center"
+  >
+    <p>Emsdettener Straße 2, 48268 Greven - 02571 / 27 12 -info@breuch.de</p>
+  </div>
+
+  <div class="mx-auto flex flex-col">
+    <span class="text-sm sm:text-left"
+      >©2023 <a routerLink="/home" class="hover:underline">Puls der Zeit</a>.
+      All Rights Reserved.
+    </span>
+    <br />
+    <ul class="flex flex-col text-center items-center mt-3 text-sm sm:mt-0">
+      <li>
+        <a
+          routerLink="/contact"
+          routerLinkActive="routeIsActive"
+          class="text-sm mr-4 hover:underline md:mr-6"
+          >Contact</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/impressum"
+          routerLinkActive="routeIsActive"
+          class="text-sm mr-4 hover:underline md:mr-6"
+          >Impressum</a
+        >
+      </li>
+      <li>
+        <a
+          routerLink="/datenschutzerklaerung"
+          routerLinkActive="routeIsActive"
+          class="text-sm mr-4 hover:underline"
+          >Datenschutzerklärung
+        </a>
+      </li>
+    </ul>
+  </div>
 </footer>

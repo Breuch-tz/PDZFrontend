@@ -12,6 +12,9 @@ div ul li:hover {
   a {
     color: var(--one-opacity-X);
   }
+  .routeIsActive {
+    color: var(--accent);
+  }
 }
 
 .routeIsActive {
