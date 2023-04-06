@@ -10,7 +10,7 @@ export class AppComponent {
   public SidenavToggleStatus: boolean = true;
   public Mobilesize: boolean = true;
 
-  public ScreenWidth!: Number;
+  public ScreenWidth!: number;
 
   constructor(public meta: Meta) {
     this.onResize();
@@ -20,7 +20,7 @@ export class AppComponent {
       {
         name: 'description',
         content:
-          'Herzlich willkommen bei Puls der Zeit j Juwelier Breuch. Trauringe, Uhren und Schmuck mit Top Beratung und Preisen.',
+          'Herzlich willkommen bei Puls der Zeit - Juwelier Breuch. Trauringe, Uhren und Schmuck mit Top Beratung und Preisen.',
       },
       {
         name: 'keywords',
